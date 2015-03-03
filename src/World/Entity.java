@@ -13,26 +13,17 @@
  * of the penalties mentioned above will apply.   
  * 
  * @author Ankur Gupta
- * @date Jan 12, 2015
+ * @date Mar 3, 2015
  */
-package Gui;
+package World;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.Graphics;
 
-public class KeyInput implements KeyListener {
-    public static boolean A = false;
-    public static boolean D = false;
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-    }
+/**
+ *
+ * @author ankurgupta
+ */
+public interface Entity {
+    public void tick();
+    public void render(Graphics g);
 }

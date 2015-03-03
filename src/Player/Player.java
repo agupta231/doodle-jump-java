@@ -15,25 +15,33 @@
  * @author Ankur Gupta
  * @date Mar 3, 2015
  */
-package Gui;
+package Player;
 
-import Player.Player;
+import Main.Setup;
+import World.Entity;
+import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 /**
  *
  * @author ankurgupta
  */
-public class Handler {
-    Player player;
+public class Player implements Entity{
+    private Rectangle rect;
+    private Color color = PlayerSetup.mainPlayerColor;
     
-    public Handler() {
-        player = new Player();
+    public Player() {
+        this.rect = new Rectangle(Setup.WINDOW_WIDTH/2 - PlayerSetup.width/2, Setup.WINDOW_HEIGHT/2 - PlayerSetup.height/2, PlayerSetup.width, PlayerSetup.height);
     }
+    
     public void tick() {
-        player.tick();
+        
     }
+
     public void render(Graphics g) {
-        player.render(g);
+        g.setColor(this.color);
+        
+        g.drawRect(this.rect.x, this.rect.y, this.rect.width, this.rect.height);
     }
 }

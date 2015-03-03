@@ -10,10 +10,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 import java.util.Random;
 
-/**
- *
- * @author Bayjose
- */
 public class MousePositionLocator implements MouseMotionListener{
     
     public static Rectangle MouseLocation = new Rectangle(0, 0, 3, 3);

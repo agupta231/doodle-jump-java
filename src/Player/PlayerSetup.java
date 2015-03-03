@@ -13,26 +13,18 @@
  * of the penalties mentioned above will apply.   
  * 
  * @author Ankur Gupta
- * @date Jan 12, 2015
+ * @date Mar 3, 2015
  */
-package Gui;
+package Player;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.Color;
 
-public class KeyInput implements KeyListener {
-    public static boolean A = false;
-    public static boolean D = false;
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-    }
+/**
+ *
+ * @author ankurgupta
+ */
+public class PlayerSetup {
+    public static int height  = 40;
+    public static int width = 40;
+    public static Color mainPlayerColor = Color.black;
 }

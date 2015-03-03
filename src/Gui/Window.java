@@ -22,10 +22,6 @@ import Main.Setup;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 
-/**
- *
- * @author ankurgupta
- */
 public class Window {
     public Window(Game game) {
         game.setPreferredSize(new Dimension(Setup.WINDOW_WIDTH, Setup.WINDOW_HEIGHT));

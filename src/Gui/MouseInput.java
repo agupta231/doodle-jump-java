@@ -11,11 +11,6 @@ import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-
-/**
- *
- * @author Bayjose
- */
 public class MouseInput implements MouseListener{
     
 

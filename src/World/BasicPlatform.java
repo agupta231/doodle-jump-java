@@ -15,7 +15,7 @@
  * @author Ankur Gupta
  * @date Mar 3, 2015
  */
-package Entity;
+package World;
 
 import java.awt.Graphics;
 
@@ -23,7 +23,13 @@ import java.awt.Graphics;
  *
  * @author ankurgupta
  */
-public interface Entity {
-    public void tick();
-    public void render(Graphics g);
+public class BasicPlatform implements Platform {
+
+    public void tick() {
+        
+    }
+    public void render(Graphics g) {
+        
+    }
+    
 }
