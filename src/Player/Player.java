@@ -43,6 +43,12 @@ public class Player implements Entity{
         if(KeyInput.D == true) {
             this.rect.x += PlayerSetup.movementSpeed;
         }
+        if(this.rect.x >= Setup.WINDOW_WIDTH) {
+            this.rect.x = 10;
+        }
+        if(this.rect.x <= 0) {
+            this.rect.x = Setup.WINDOW_WIDTH;
+        }
     }
 
     public void render(Graphics g) {
