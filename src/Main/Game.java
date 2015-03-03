@@ -18,7 +18,9 @@
 package Main;
 
 import Gui.Handler;
+import Input.KeyInput;
 import Gui.Window;
+import Input.MouseInput;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -52,6 +54,9 @@ public class Game extends Canvas implements Runnable {
         height=getHeight();
         
         handler = new Handler();
+        
+        this.addMouseListener(new MouseInput(handler));
+        this.addKeyListener(new KeyInput(handler));
         Screen = new Rectangle(0, 0, Setup.WINDOW_WIDTH, Setup.WINDOW_HEIGHT);
     }
     public void run() {

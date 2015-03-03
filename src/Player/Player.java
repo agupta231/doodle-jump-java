@@ -17,6 +17,7 @@
  */
 package Player;
 
+import Input.KeyInput;
 import Main.Setup;
 import World.Entity;
 import java.awt.Color;
@@ -36,7 +37,12 @@ public class Player implements Entity{
     }
     
     public void tick() {
-        
+        if(KeyInput.A == true) {
+            this.rect.x -= PlayerSetup.movementSpeed;
+        }
+        if(KeyInput.D == true) {
+            this.rect.x += PlayerSetup.movementSpeed;
+        }
     }
 
     public void render(Graphics g) {

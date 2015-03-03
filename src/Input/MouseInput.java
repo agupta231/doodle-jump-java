@@ -1,4 +1,4 @@
-package Gui;
+package Input;
 
 /*
  * To change this template, choose Tools | Templates
@@ -6,6 +6,7 @@ package Gui;
  */
 
 
+import Gui.Handler;
 import java.awt.Color;
 import java.awt.Rectangle;
 import java.awt.event.MouseEvent;

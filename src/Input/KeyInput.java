@@ -15,24 +15,41 @@
  * @author Ankur Gupta
  * @date Jan 12, 2015
  */
-package Gui;
+package Input;
 
+import Gui.Handler;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class KeyInput implements KeyListener {
+    Handler handler;
     public static boolean A = false;
     public static boolean D = false;
-
-    @Override
+    
+    public KeyInput(Handler handler) {
+        this.handler = handler;
+    }
     public void keyTyped(KeyEvent e) {
+        
     }
-
-    @Override
     public void keyPressed(KeyEvent e) {
+        int key = e.getKeyCode();
+        
+        if(key == KeyEvent.VK_A) {
+            KeyInput.A = true;
+        }
+        if(key == KeyEvent.VK_D) {
+            KeyInput.D = true;
+        }
     }
-
-    @Override
     public void keyReleased(KeyEvent e) {
+        int key = e.getKeyCode();
+        
+        if(key == KeyEvent.VK_A) {
+            KeyInput.A = false;
+        }
+        if(key == KeyEvent.VK_D) {
+            KeyInput.D = false;
+        }
     }
 }
