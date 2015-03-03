@@ -15,14 +15,12 @@
  * @author Ankur Gupta
  * @date Mar 3, 2015
  */
-package Main;
+package Player;
 
 /**
  *
  * @author ankurgupta
  */
-public class Setup {
-    public static int WINDOW_WIDTH = 800;
-    public static int WINDOW_HEIGHT = 720;
-    public static String TITLE = "Doodle Jump";
+public class Score {
+    public static int SCORE = 0;
 }
