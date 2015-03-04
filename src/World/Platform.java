@@ -40,8 +40,9 @@ public abstract class Platform implements Entity{
     public void tick() {
         if(Player.rect.intersects(platform)) {
             Player.gravity.changeDirection();
+            Player.gravity.changeThreshold(Player.rect.y);
+            specialFunction();
         }
-        specialFunction();
     }
     public void render(Graphics g) {
         g.setColor(this.color);

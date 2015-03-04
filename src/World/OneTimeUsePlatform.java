@@ -22,11 +22,13 @@ package World;
  * @author ankurgupta
  */
 public class OneTimeUsePlatform extends Platform{
-    private int hitCounter;
+    public int hitCounter;
     
     public OneTimeUsePlatform(int x, int y) {
         super(x, y, PlatformSetup.OneTimePlatformColor);
+        hitCounter = 0;
     }
     public void specialFunction() {
+        hitCounter++;
     }    
 }

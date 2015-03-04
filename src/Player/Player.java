@@ -22,8 +22,6 @@ import Main.Setup;
 import Physics.PlayerGravityHandler;
 import Entity.Entity;
 import Gui.Handler;
-import Main.Game;
-import Util.DebugGuiHandler;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
