@@ -13,7 +13,7 @@
  * of the penalties mentioned above will apply.   
  * 
  * @author Ankur Gupta
- * @date Mar 3, 2015
+ * @date Mar 4, 2015
  */
 package World;
 
@@ -21,9 +21,12 @@ package World;
  *
  * @author ankurgupta
  */
-public class BasicPlatform extends Platform {
-    public BasicPlatform(int x, int y) {
-        super(x, y, PlatformSetup.basicPlatformColor);
+public class OneTimeUsePlatform extends Platform{
+    private int hitCounter;
+    
+    public OneTimeUsePlatform(int x, int y) {
+        super(x, y, PlatformSetup.OneTimePlatformColor);
     }
-    public void specialFunction() {}
+    public void specialFunction() {
+    }    
 }

@@ -27,8 +27,9 @@ public abstract class Platform implements Entity{
     public Rectangle platform;
     private Color color;
     
-    public Platform(int x, int y) {
+    public Platform(int x, int y, Color color) {
         this.platform = new Rectangle(x, y, PlatformSetup.platformWidth, PlatformSetup.platformHeight);
+        this.color = color;
     }
     public void changeY(int newY){
         this.platform.y = newY;
@@ -40,9 +41,11 @@ public abstract class Platform implements Entity{
         if(Player.rect.intersects(platform)) {
             Player.gravity.changeDirection();
         }
+        specialFunction();
     }
     public void render(Graphics g) {
         g.setColor(this.color);
         g.drawRect(this.platform.x, this.platform.y, this.platform.width, this.platform.height);
     }
+    public abstract void specialFunction();
 }

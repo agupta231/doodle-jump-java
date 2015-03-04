@@ -19,6 +19,7 @@ package Gui;
 
 import Player.Player;
 import World.BasicPlatform;
+import World.PlatformSetup;
 import java.awt.Graphics;
 import java.util.LinkedList;
 
