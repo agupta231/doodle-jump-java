@@ -17,6 +17,32 @@
  */
 package World;
 
-public interface Platform extends Entity{
+import Entity.Entity;
+import Player.Player;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Rectangle;
+
+public abstract class Platform implements Entity{
+    public Rectangle platform;
+    private Color color;
     
+    public Platform(int x, int y) {
+        this.platform = new Rectangle(x, y, PlatformSetup.platformWidth, PlatformSetup.platformHeight);
+    }
+    public void changeY(int newY){
+        this.platform.y = newY;
+    }
+    public void setColor(Color color) {
+        this.color = color;
+    }
+    public void tick() {
+        if(Player.rect.intersects(this.platform)) {
+            Player.gravity.changeDirection();
+        }
+    }
+    public void render(Graphics g) {
+        g.setColor(this.color);
+        g.drawRect(this.platform.x, this.platform.y, this.platform.width, this.platform.height);
+    }
 }

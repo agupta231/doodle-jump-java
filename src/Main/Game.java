@@ -38,6 +38,7 @@ public class Game extends Canvas implements Runnable {
     
     public static int width;
     public static int height;
+    public static Window window;
     
     Handler handler;
     
@@ -113,6 +114,6 @@ public class Game extends Canvas implements Runnable {
         bs.show();
     }
     public static void main(String[] args) {
-        new Window(new Game());
+        Game.window = new Window(new Game());
     }
 }

@@ -26,26 +26,43 @@ import Player.PlayerSetup;
  * @author ankurgupta
  */
 public class PlayerGravityHandler {
-    private Player player;
     public int threshold;
-    private String direction;
+    private int direction;
     
-    public PlayerGravityHandler(Player player) {
-        this.player = player;
-        this.direction = "up";
+    public PlayerGravityHandler() {
+        this.direction = 1;
+        resetThreshold();
     }
     public int calculateY(int currentY) {
-        return 21;
+        int newY = currentY;
+        
+        if(currentY + PlayerSetup.height <= this.threshold - PlayerGravitySetup.jumpHeight) {
+            changeDirection();
+        }
+//        else if(currentY >= this.threshold) {
+//            changeDirection();
+//        }
+        if(this.direction == 1) {
+            newY = currentY - PlayerGravitySetup.gravitySpeed;
+        }
+        else if(this.direction == 0) {
+            newY = currentY + PlayerGravitySetup.gravitySpeed; 
+        }
+        
+        return newY;
     }
     public void resetThreshold() {
         this.threshold = Setup.WINDOW_HEIGHT/2 + PlayerSetup.height;
     }
     public void changeDirection() {
-        if(this.direction.equals("up")) {
-            this.direction = "down";
+        if(this.direction == 1) {
+            this.direction = 0;
         }
-        if(this.direction.equals("down")) {
-            this.direction = "up";
+        else if(this.direction == 0) {
+            this.direction = 1;
         }
+    }
+    public void changeThreshold(int newThreshold){
+        this.threshold = newThreshold;
     }
 }

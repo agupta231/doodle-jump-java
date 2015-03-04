@@ -15,7 +15,7 @@
  * @author Ankur Gupta
  * @date Mar 3, 2015
  */
-package World;
+package Entity;
 
 import java.awt.Graphics;
 

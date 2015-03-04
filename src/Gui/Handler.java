@@ -18,6 +18,7 @@
 package Gui;
 
 import Player.Player;
+import World.BasicPlatform;
 import java.awt.Graphics;
 
 /**
@@ -26,14 +27,18 @@ import java.awt.Graphics;
  */
 public class Handler {
     Player player;
+    public BasicPlatform bp;
     
     public Handler() {
-        player = new Player();
+        player = new Player(this);
+        bp = new BasicPlatform(50, 600);
     }
     public void tick() {
         player.tick();
+        bp.tick();
     }
     public void render(Graphics g) {
         player.render(g);
+        bp.render(g);
     }
 }

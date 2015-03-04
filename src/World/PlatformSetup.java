@@ -13,20 +13,19 @@
  * of the penalties mentioned above will apply.   
  * 
  * @author Ankur Gupta
- * @date Mar 3, 2015
+ * @date Mar 4, 2015
  */
 package World;
+
+import java.awt.Color;
 
 /**
  *
  * @author ankurgupta
  */
-public class BasicPlatform extends Platform {
-    public BasicPlatform(int x, int y) {
-        super(x, y);
-    }
+public class PlatformSetup {
+    public static int platformWidth = 200;
+    public static int platformHeight = 6;
     
-    public void tick() {
-        
-    }
+    public static Color basicPlatformColor = Color.DARK_GRAY;
 }

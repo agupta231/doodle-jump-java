@@ -19,7 +19,11 @@ package Player;
 
 import Input.KeyInput;
 import Main.Setup;
-import World.Entity;
+import Physics.PlayerGravityHandler;
+import Entity.Entity;
+import Gui.Handler;
+import Main.Game;
+import Util.DebugGuiHandler;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
@@ -29,33 +33,37 @@ import java.awt.Rectangle;
  * @author ankurgupta
  */
 public class Player implements Entity{
-    private Rectangle rect;
+    public static Rectangle rect;
+    public static PlayerGravityHandler gravity;
     private Color color = PlayerSetup.mainPlayerColor;
+    Handler handler;
     
-    public Player() {
-        this.rect = new Rectangle(Setup.WINDOW_WIDTH/2 - PlayerSetup.width/2, Setup.WINDOW_HEIGHT/2 - PlayerSetup.height/2, PlayerSetup.width, PlayerSetup.height);
+    public Player(Handler handler) {
+        Player.rect = new Rectangle(Setup.WINDOW_WIDTH/2 - PlayerSetup.width, Setup.WINDOW_HEIGHT/2 - PlayerSetup.height/2, PlayerSetup.width, PlayerSetup.height);
+        Player.gravity = new PlayerGravityHandler();
+        this.handler = handler;
     }
     
     public void tick() {
         if(KeyInput.A == true) {
-            this.rect.x -= PlayerSetup.movementSpeed;
+            Player.rect.x -= PlayerSetup.movementSpeed;
         }
         if(KeyInput.D == true) {
-            this.rect.x += PlayerSetup.movementSpeed;
+            Player.rect.x += PlayerSetup.movementSpeed;
         }
-        if(this.rect.x >= Setup.WINDOW_WIDTH) {
-            this.rect.x = 10;
+        if(Player.rect.x >= Setup.WINDOW_WIDTH) {
+            Player.rect.x = 10;
         }
-        if(this.rect.x <= 0) {
-            this.rect.x = Setup.WINDOW_WIDTH;
+        if(Player.rect.x <= 0) {
+            Player.rect.x = Setup.WINDOW_WIDTH;
         }
         
-        
+        Player.rect.y = Player.gravity.calculateY(this.rect.y);
     }
 
     public void render(Graphics g) {
         g.setColor(this.color);
         
-        g.drawRect(this.rect.x, this.rect.y, this.rect.width, this.rect.height);
+        g.drawRect(Player.rect.x, Player.rect.y, Player.rect.width, Player.rect.height);
     }
 }
