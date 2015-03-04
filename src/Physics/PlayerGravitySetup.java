@@ -22,6 +22,6 @@ package Physics;
  * @author ankurgupta
  */
 public class PlayerGravitySetup {
-    public static int gravitySpeed = 10;
-    public static int jumpHeight = 200;
+    public static int gravitySpeed = 12;
+    public static int jumpHeight = 150;
 }

@@ -25,8 +25,4 @@ public class BasicPlatform extends Platform {
     public BasicPlatform(int x, int y) {
         super(x, y);
     }
-    
-    public void tick() {
-        
-    }
 }

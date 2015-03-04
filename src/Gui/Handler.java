@@ -20,6 +20,7 @@ package Gui;
 import Player.Player;
 import World.BasicPlatform;
 import java.awt.Graphics;
+import java.util.LinkedList;
 
 /**
  *
@@ -27,18 +28,28 @@ import java.awt.Graphics;
  */
 public class Handler {
     Player player;
-    public BasicPlatform bp;
+    public LinkedList<BasicPlatform> bp;
     
     public Handler() {
-        player = new Player(this);
-        bp = new BasicPlatform(50, 600);
+        player = new Player(this);        
+        bp = new LinkedList<>();
+        this.init();
+    }
+    private void init() {
+        bp.add(new BasicPlatform(200, 600));
     }
     public void tick() {
         player.tick();
-        bp.tick();
+        
+        for(int i = 0; i < bp.size(); i++) {
+            bp.get(i).tick();
+        }
     }
     public void render(Graphics g) {
         player.render(g);
-        bp.render(g);
+        
+        for(int i = 0; i < bp.size(); i++) {
+            bp.get(i).render(g);
+        }
     }
 }

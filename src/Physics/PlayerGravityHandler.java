@@ -18,7 +18,6 @@
 package Physics;
 
 import Main.Setup;
-import Player.Player;
 import Player.PlayerSetup;
 
 /**

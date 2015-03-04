@@ -37,7 +37,7 @@ public abstract class Platform implements Entity{
         this.color = color;
     }
     public void tick() {
-        if(Player.rect.intersects(this.platform)) {
+        if(Player.rect.intersects(platform)) {
             Player.gravity.changeDirection();
         }
     }
