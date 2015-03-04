@@ -49,6 +49,8 @@ public class Player implements Entity{
         if(this.rect.x <= 0) {
             this.rect.x = Setup.WINDOW_WIDTH;
         }
+        
+        
     }
 
     public void render(Graphics g) {
