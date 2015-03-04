@@ -18,6 +18,7 @@
 package Input;
 
 import Gui.Handler;
+import Util.DebugGuiHandler;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -25,6 +26,7 @@ public class KeyInput implements KeyListener {
     Handler handler;
     public static boolean A = false;
     public static boolean D = false;
+    public static boolean N1 = false;
     
     public KeyInput(Handler handler) {
         this.handler = handler;
@@ -41,6 +43,10 @@ public class KeyInput implements KeyListener {
         if(key == KeyEvent.VK_D) {
             KeyInput.D = true;
         }
+        if(key == KeyEvent.VK_1) {
+            DebugGuiHandler.changeDebugGUIStatus();
+            KeyInput.N1 = true;
+        }
     }
     public void keyReleased(KeyEvent e) {
         int key = e.getKeyCode();
@@ -49,6 +55,9 @@ public class KeyInput implements KeyListener {
             KeyInput.A = false;
         }
         if(key == KeyEvent.VK_D) {
+            KeyInput.D = false;
+        }
+        if(key == KeyEvent.VK_1) {
             KeyInput.D = false;
         }
     }
