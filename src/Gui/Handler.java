@@ -29,31 +29,31 @@ import java.util.LinkedList;
  */
 public class Handler {
     Player player;
-    public LinkedList<BasicPlatform> bp;
-    public LinkedList<OneTimeUsePlatform> otp;
+    public static LinkedList<BasicPlatform> bp;
+    public static LinkedList<OneTimeUsePlatform> otp;
     
     public Handler() {
         player = new Player(this);        
-        bp = new LinkedList<>();
-        otp = new LinkedList<>();
+        Handler.bp = new LinkedList<>();
+        Handler.otp = new LinkedList<>();
         
         this.init();
     }
     private void init() {
-        bp.add(new BasicPlatform(200, 600));
+        Handler.bp.add(new BasicPlatform(200, 600));
         
-        otp.add(new OneTimeUsePlatform(500, 500));
+        Handler.otp.add(new OneTimeUsePlatform(500, 500));
     }
     public void tick() {
         player.tick();
         
         for(int i = 0; i < bp.size(); i++) {
-            bp.get(i).tick();
+            Handler.bp.get(i).tick();
         }
         for(int i = 0; i < otp.size(); i++) {
-            otp.get(i).tick();
-            if (otp.get(i).hitCounter == 1) {
-                otp.remove(i);
+            Handler.otp.get(i).tick();
+            if (Handler.otp.get(i).hitCounter == 1) {
+                Handler.otp.remove(i);
             }
         }
     }
@@ -61,10 +61,10 @@ public class Handler {
         player.render(g);
         
         for(int i = 0; i < bp.size(); i++) {
-            bp.get(i).render(g);
+            Handler.bp.get(i).render(g);
         }
         for(int i = 0; i < otp.size(); i++) {
-            otp.get(i).render(g);
+            Handler.otp.get(i).render(g);
         }
     }
 }
