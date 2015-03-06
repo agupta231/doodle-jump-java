@@ -53,7 +53,7 @@ public class Player implements Entity{
             Player.rect.x = 10;
         }
         if(Player.rect.x <= 0) {
-            Player.rect.x = Setup.WINDOW_WIDTH;
+            Player.rect.x = Setup.WINDOW_WIDTH - 10;
         }
         
         Player.rect.y = Player.gravity.calculateY(this.rect.y);

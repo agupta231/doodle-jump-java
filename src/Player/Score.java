@@ -23,4 +23,7 @@ package Player;
  */
 public class Score {
     public static int SCORE = 0;
+    
+    public static int leftPadding = 25;
+    public static int topPadding = 50;
 }

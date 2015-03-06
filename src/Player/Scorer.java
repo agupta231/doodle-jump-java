@@ -13,17 +13,29 @@
  * of the penalties mentioned above will apply.   
  * 
  * @author Ankur Gupta
- * @date Mar 3, 2015
+ * @date Mar 6, 2015
  */
-package World;
+package Player;
+
+import Entity.Entity;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
 
 /**
  *
  * @author ankurgupta
  */
-public class BasicPlatform extends Platform {
-    public BasicPlatform(int x, int y) {
-        super(x, y, PlatformSetup.basicPlatformColor, 50);
+public class Scorer implements Entity{
+
+    public void tick() {
     }
-    public void specialFunction() {}
+
+    public void render(Graphics g) {
+        g.setColor(Color.black);
+        g.setFont(new Font("Monacco", Font.PLAIN, 24));
+        
+        g.drawString(String.valueOf(Score.SCORE), Score.leftPadding, Score.topPadding);
+    }
+    
 }

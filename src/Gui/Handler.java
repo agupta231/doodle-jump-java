@@ -18,6 +18,7 @@
 package Gui;
 
 import Player.Player;
+import Player.Scorer;
 import World.BasicPlatform;
 import World.OneTimeUsePlatform;
 import java.awt.Graphics;
@@ -29,11 +30,13 @@ import java.util.LinkedList;
  */
 public class Handler {
     Player player;
+    Scorer score;
     public static LinkedList<BasicPlatform> bp;
     public static LinkedList<OneTimeUsePlatform> otp;
     
     public Handler() {
-        player = new Player(this);        
+        player = new Player(this);
+        score = new Scorer();
         Handler.bp = new LinkedList<>();
         Handler.otp = new LinkedList<>();
         
@@ -41,11 +44,13 @@ public class Handler {
     }
     private void init() {
         Handler.bp.add(new BasicPlatform(200, 600));
+        Handler.bp.add(new BasicPlatform(400, 500));
         
-        Handler.otp.add(new OneTimeUsePlatform(500, 500));
+        Handler.otp.add(new OneTimeUsePlatform(50, 500));
     }
     public void tick() {
         player.tick();
+        score.tick();
         
         for(int i = 0; i < bp.size(); i++) {
             Handler.bp.get(i).tick();
@@ -59,6 +64,7 @@ public class Handler {
     }
     public void render(Graphics g) {
         player.render(g);
+        score.render(g);
         
         for(int i = 0; i < bp.size(); i++) {
             Handler.bp.get(i).render(g);

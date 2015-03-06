@@ -24,8 +24,9 @@ package World;
 public class OneTimeUsePlatform extends Platform{
     public int hitCounter;
     
+    
     public OneTimeUsePlatform(int x, int y) {
-        super(x, y, PlatformSetup.OneTimePlatformColor);
+        super(x, y, PlatformSetup.OneTimePlatformColor, 75);
         hitCounter = 0;
     }
     public void specialFunction() {

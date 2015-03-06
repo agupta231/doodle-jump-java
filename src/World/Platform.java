@@ -19,6 +19,7 @@ package World;
 
 import Entity.Entity;
 import Player.Player;
+import Player.Score;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
@@ -26,9 +27,12 @@ import java.awt.Rectangle;
 public abstract class Platform implements Entity{
     public Rectangle platform;
     private Color color;
+    private int score;
+    private boolean isHit = false;
     
-    public Platform(int x, int y, Color color) {
+    public Platform(int x, int y, Color color, int scoreWorth) {
         this.platform = new Rectangle(x, y, PlatformSetup.platformWidth, PlatformSetup.platformHeight);
+        this.score = scoreWorth;
         this.color = color;
     }
     public void changeY(int newY){
@@ -39,11 +43,19 @@ public abstract class Platform implements Entity{
     }
     public void tick() {
         if(Player.rect.intersects(platform)) {
+            addToScore();
             Player.gravity.changeDirection();
             Player.gravity.changeThreshold(Player.rect.y);
             specialFunction();
         }
     }
+    public void addToScore() {
+        if(this.isHit == false) {
+            Score.SCORE += this.score;
+            this.isHit = true;
+        }
+    }
+    
     public void render(Graphics g) {
         g.setColor(this.color);
         g.drawRect(this.platform.x, this.platform.y, this.platform.width, this.platform.height);
