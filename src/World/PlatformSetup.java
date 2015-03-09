@@ -28,5 +28,6 @@ public class PlatformSetup {
     public static int platformHeight = 6;
     
     public static Color basicPlatformColor = Color.ORANGE;
-    public static Color OneTimePlatformColor = Color.red;
+    public static Color oneTimePlatformColor = Color.RED;
+    public static Color animatedPlatformColor = Color.MAGENTA;
 }

@@ -13,23 +13,25 @@
  * of the penalties mentioned above will apply.   
  * 
  * @author Ankur Gupta
- * @date Mar 4, 2015
+ * @date Mar 6, 2015
  */
 package World;
+
+import java.awt.Color;
 
 /**
  *
  * @author ankurgupta
  */
-public class OneTimeUsePlatform extends Platform{
-    public int hitCounter;
-    
-    
-    public OneTimeUsePlatform(int x, int y) {
-        super(x, y, PlatformSetup.oneTimePlatformColor, 75);
-        hitCounter = 0;
+public class AnimatedPlatform extends Platform{
+
+    public AnimatedPlatform(int x, int y) {
+        super(x, y, PlatformSetup.animatedPlatformColor, 125);
     }
+
+    @Override
     public void specialFunction() {
-        hitCounter++;
-    }    
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }

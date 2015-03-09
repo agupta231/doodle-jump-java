@@ -24,8 +24,8 @@ import java.awt.Color;
  * @author ankurgupta
  */
 public class PlayerSetup {
-    public static int height  = 40;
-    public static int width = 40;
+    public static int width = 84;
+    public static int height  = 76;
     public static int movementSpeed = 10;
     public static Color mainPlayerColor = Color.black;
 }

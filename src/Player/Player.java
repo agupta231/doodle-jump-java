@@ -22,9 +22,11 @@ import Main.Setup;
 import Physics.PlayerGravityHandler;
 import Entity.Entity;
 import Gui.Handler;
+import Util.DrawImage;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
 
 /**
  *
@@ -35,9 +37,13 @@ public class Player implements Entity{
     public static PlayerGravityHandler gravity;
     private Color color = PlayerSetup.mainPlayerColor;
     Handler handler;
+    BufferedImage Sprite;
+    DrawImage di;
     
     public Player(Handler handler) {
         Player.rect = new Rectangle(Setup.WINDOW_WIDTH/2 - PlayerSetup.width, Setup.WINDOW_HEIGHT/2 - PlayerSetup.height/2, PlayerSetup.width, PlayerSetup.height);
+        this.di = new DrawImage();
+        this.Sprite = di.load("Player/Player.png");
         Player.gravity = new PlayerGravityHandler();
         this.handler = handler;
     }
@@ -62,6 +68,7 @@ public class Player implements Entity{
     public void render(Graphics g) {
         g.setColor(this.color);
         
+        g.drawImage(Sprite, Player.rect.x, Player.rect.y, Player.rect.width, Player.rect.height, null);
         g.drawRect(Player.rect.x, Player.rect.y, Player.rect.width, Player.rect.height);
     }
 }
