@@ -25,4 +25,5 @@ public class Config {
     public static int WINDOW_WIDTH = 480;
     public static int WINDOW_HEIGHT = 800;
     public static String TITLE = "Doodle Jump";
+    public static String BGFilePath = "World/Background.jpg";
 }

@@ -13,21 +13,14 @@
  * of the penalties mentioned above will apply.   
  * 
  * @author Ankur Gupta
- * @date Mar 3, 2015
+ * @date Mar 10, 2015
  */
-package Physics;
+package Util;
 
 /**
  *
  * @author ankurgupta
  */
-public class PlayerGravitySetup {
-    public static int pixelsPerSecond = 300;
-    public static int gravitySpeed = PlayerGravitySetup.pixelsPerSecond / 60;
-    public static int jumpHeight = 200;
+public class Intersect {
     
-    public static int speed = 4;
-    public static double acceleration = 9.8;
-    public static double velocityInital = Math.sqrt(8.96112);
-    public static int ppf = 30;
 }

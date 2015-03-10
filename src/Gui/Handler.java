@@ -17,11 +17,14 @@
  */
 package Gui;
 
+import Main.Config;
 import Player.Player;
 import Player.Scorer;
+import Util.DrawImage;
 import World.BasicPlatform;
 import World.OneTimeUsePlatform;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 import java.util.LinkedList;
 
 /**
@@ -33,10 +36,14 @@ public class Handler {
     Scorer score;
     public static LinkedList<BasicPlatform> bp;
     public static LinkedList<OneTimeUsePlatform> otp;
+    DrawImage di;
+    BufferedImage bg; 
     
     public Handler() {
         player = new Player(this);
         score = new Scorer();
+        di = new DrawImage();
+        bg = di.load(Config.BGFilePath);
         Handler.bp = new LinkedList<>();
         Handler.otp = new LinkedList<>();
         
@@ -63,6 +70,8 @@ public class Handler {
         }
     }
     public void render(Graphics g) {
+        g.drawImage(bg, 0, 0, Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT, null);
+        
         player.render(g);
         score.render(g);
         
