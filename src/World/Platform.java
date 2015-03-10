@@ -20,6 +20,7 @@ package World;
 import Entity.Entity;
 import Player.Player;
 import Player.Score;
+import Util.DebugGuiHandler;
 import Util.DrawImage;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -65,7 +66,10 @@ public abstract class Platform implements Entity{
     public void render(Graphics g) {
         g.setColor(this.color);
         g.drawImage(sprite, this.platform.x, this.platform.y, this.platform.width, this.platform.height, null);
-        g.drawRect(this.platform.x, this.platform.y, this.platform.width, this.platform.height);
+        
+        if(DebugGuiHandler.debugGUIEnabled == true) {
+            g.drawRect(this.platform.x, this.platform.y, this.platform.width, this.platform.height);
+        }
     }
     public abstract void specialFunction();
 }

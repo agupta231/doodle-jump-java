@@ -23,7 +23,7 @@ package World;
  */
 public class BasicPlatform extends Platform {
     public BasicPlatform(int x, int y) {
-        super(x, y, PlatformSetup.basicPlatformColor, 50, "BasicPlatform.png");
+        super(x, y, PlatformConfig.basicPlatformColor, 50, "BasicPlatform.png");
     }
     public void specialFunction() {}
 }

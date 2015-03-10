@@ -23,8 +23,8 @@ import java.awt.Color;
  *
  * @author ankurgupta
  */
-public class PlatformSetup {
-    public static Color basicPlatformColor = Color.ORANGE;
+public class PlatformConfig {
+    public static Color basicPlatformColor = Color.BLUE;
     public static Color oneTimePlatformColor = Color.RED;
     public static Color animatedPlatformColor = Color.MAGENTA;
 }

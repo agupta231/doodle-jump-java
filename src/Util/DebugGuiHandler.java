@@ -28,8 +28,10 @@ public class DebugGuiHandler {
         if(DebugGuiHandler.debugGUIEnabled == false) {
             DebugGuiHandler.debugGUIEnabled = true;
         }
-        if(DebugGuiHandler.debugGUIEnabled == true) {
+        else if(DebugGuiHandler.debugGUIEnabled == true) {
             DebugGuiHandler.debugGUIEnabled = false;
         }
+        
+        System.err.print(debugGUIEnabled);
     }
 }

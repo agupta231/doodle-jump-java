@@ -18,7 +18,7 @@
 package Gui;
 
 import Main.Game;
-import Main.Setup;
+import Main.Config;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 
@@ -26,11 +26,11 @@ public class Window {
     public JFrame frame;
     
     public Window(Game game) {
-        game.setPreferredSize(new Dimension(Setup.WINDOW_WIDTH, Setup.WINDOW_HEIGHT));
-        game.setMinimumSize(new Dimension(Setup.WINDOW_WIDTH,Setup.WINDOW_HEIGHT));
-        game.setMaximumSize(new Dimension(Setup.WINDOW_WIDTH,Setup.WINDOW_HEIGHT));
+        game.setPreferredSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
+        game.setMinimumSize(new Dimension(Config.WINDOW_WIDTH,Config.WINDOW_HEIGHT));
+        game.setMaximumSize(new Dimension(Config.WINDOW_WIDTH,Config.WINDOW_HEIGHT));
         
-        frame = new JFrame(Setup.TITLE);
+        frame = new JFrame(Config.TITLE);
         frame.add(game);
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

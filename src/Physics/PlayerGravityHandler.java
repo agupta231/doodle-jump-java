@@ -17,8 +17,8 @@
  */
 package Physics;
 
-import Main.Setup;
-import Player.PlayerSetup;
+import Main.Config;
+import Player.PlayerConfig;
 
 /**
  *
@@ -35,7 +35,7 @@ public class PlayerGravityHandler {
     public int calculateY(int currentY) {
         int newY = currentY;
         
-        if(currentY + PlayerSetup.height <= this.threshold - PlayerGravitySetup.jumpHeight) {
+        if(currentY + PlayerConfig.height <= this.threshold - PlayerGravitySetup.jumpHeight) {
             changeDirection();
         }
 //        else if(currentY >= this.threshold) {
@@ -51,7 +51,7 @@ public class PlayerGravityHandler {
         return newY;
     }
     public void resetThreshold() {
-        this.threshold = Setup.WINDOW_HEIGHT/2 + PlayerSetup.height;
+        this.threshold = Config.WINDOW_HEIGHT/2 + PlayerConfig.height;
     }
     public void changeDirection() {
         if(this.direction == 1) {

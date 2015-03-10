@@ -21,11 +21,13 @@ import Gui.Handler;
 import Input.KeyInput;
 import Gui.Window;
 import Input.MouseInput;
+import Util.DrawImage;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
 
 /**
  *
@@ -58,7 +60,7 @@ public class Game extends Canvas implements Runnable {
         
         this.addMouseListener(new MouseInput(handler));
         this.addKeyListener(new KeyInput(handler));
-        Screen = new Rectangle(0, 0, Setup.WINDOW_WIDTH, Setup.WINDOW_HEIGHT);
+        Screen = new Rectangle(0, 0, Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT);
     }
     public void run() {
         init();
@@ -104,9 +106,10 @@ public class Game extends Canvas implements Runnable {
         }
         
         Graphics g = bs.getDrawGraphics();
+        DrawImage di = new DrawImage();
         
         g.setColor(Color.white);
-        g.fillRect(0, 0, getWidth(), getHeight());
+//        g.fillRect(0, 0, getWidth(), getHeight());
         handler.render(g);
         
         

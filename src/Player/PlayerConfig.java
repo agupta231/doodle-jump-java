@@ -23,7 +23,7 @@ import java.awt.Color;
  *
  * @author ankurgupta
  */
-public class PlayerSetup {
+public class PlayerConfig {
     public static int width = 84;
     public static int height  = 76;
     public static int movementSpeed = 10;
