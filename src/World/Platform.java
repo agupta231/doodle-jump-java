@@ -20,18 +20,24 @@ package World;
 import Entity.Entity;
 import Player.Player;
 import Player.Score;
+import Util.DrawImage;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
 
 public abstract class Platform implements Entity{
     public Rectangle platform;
     private Color color;
     private int score;
     private boolean isHit = false;
+    BufferedImage sprite;
+    DrawImage di;
     
-    public Platform(int x, int y, Color color, int scoreWorth) {
-        this.platform = new Rectangle(x, y, PlatformSetup.platformWidth, PlatformSetup.platformHeight);
+    public Platform(int x, int y, Color color, int scoreWorth, String file) {
+        this.di = new DrawImage();
+        this.sprite = di.load("World/"+file);
+        this.platform = new Rectangle(x, y, this.sprite.getWidth(), this.sprite.getHeight());
         this.score = scoreWorth;
         this.color = color;
     }
@@ -58,6 +64,7 @@ public abstract class Platform implements Entity{
     
     public void render(Graphics g) {
         g.setColor(this.color);
+        g.drawImage(sprite, this.platform.x, this.platform.y, this.platform.width, this.platform.height, null);
         g.drawRect(this.platform.x, this.platform.y, this.platform.width, this.platform.height);
     }
     public abstract void specialFunction();

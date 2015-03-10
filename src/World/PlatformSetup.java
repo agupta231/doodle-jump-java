@@ -24,9 +24,6 @@ import java.awt.Color;
  * @author ankurgupta
  */
 public class PlatformSetup {
-    public static int platformWidth = 200;
-    public static int platformHeight = 6;
-    
     public static Color basicPlatformColor = Color.ORANGE;
     public static Color oneTimePlatformColor = Color.RED;
     public static Color animatedPlatformColor = Color.MAGENTA;

@@ -26,7 +26,7 @@ public class OneTimeUsePlatform extends Platform{
     
     
     public OneTimeUsePlatform(int x, int y) {
-        super(x, y, PlatformSetup.oneTimePlatformColor, 75);
+        super(x, y, PlatformSetup.oneTimePlatformColor, 75, "BasicPlatform.png");
         hitCounter = 0;
     }
     public void specialFunction() {

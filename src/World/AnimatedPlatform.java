@@ -26,7 +26,7 @@ import java.awt.Color;
 public class AnimatedPlatform extends Platform{
 
     public AnimatedPlatform(int x, int y) {
-        super(x, y, PlatformSetup.animatedPlatformColor, 125);
+        super(x, y, PlatformSetup.animatedPlatformColor, 125, "BasicPlatform.png");
     }
 
     @Override
