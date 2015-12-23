@@ -52,6 +52,7 @@ public class Handler {
     private void init() {
         Handler.bp.add(new BasicPlatform(200, 600));
         Handler.bp.add(new BasicPlatform(400, 500));
+        Handler.bp.add(new BasicPlatform(100, 300));
         
         Handler.otp.add(new OneTimeUsePlatform(50, 500));
     }
@@ -72,14 +73,14 @@ public class Handler {
     public void render(Graphics g) {
         g.drawImage(bg, 0, 0, Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT, null);
         
-        player.render(g);
-        score.render(g);
-        
         for(int i = 0; i < bp.size(); i++) {
             Handler.bp.get(i).render(g);
         }
         for(int i = 0; i < otp.size(); i++) {
             Handler.otp.get(i).render(g);
         }
+        
+        player.render(g);
+        score.render(g);
     }
 }

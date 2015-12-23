@@ -31,7 +31,5 @@ public class DebugGuiHandler {
         else if(DebugGuiHandler.debugGUIEnabled == true) {
             DebugGuiHandler.debugGUIEnabled = false;
         }
-        
-        System.err.print(debugGUIEnabled);
     }
 }
